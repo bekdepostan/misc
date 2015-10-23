@@ -7,8 +7,8 @@
 // @include      https://trello.com/b/*
 // @grant        None
 // ==/UserScript==
-var boards = [["work","background-image","url('http://images.q-life.me/i.ashx?gallery=4694938&mid=97926528&mt=Photo')"],
-              ["hobby","background-image","url('http://images.q-life.me/i.ashx?gallery=4694938&mid=97926527&mt=Photo')"]];
+var boards = [["work","background-image","url('https://raw.githubusercontent.com/q-life/misc/master/trello-background/trello_bg_2.jpg')"],
+              ["hobby","background-image","url('https://raw.githubusercontent.com/q-life/misc/master/trello-background/trello_bg_1.jpg')"]];
 var currBoard = "U-N-K-N-O-W-N";
 
 function changeBg(){
