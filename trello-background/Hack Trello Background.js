@@ -7,8 +7,8 @@
 // @include      https://trello.com/b/*
 // @grant        None
 // ==/UserScript==
-var boards = [["test","background-image","url('http://pandaweb.gr/wp-content/uploads/2014/09/office-desk-background-2.jpg')"],
-              ["hobby","background-image","PINK"]];
+var boards = [["work","background-image","url('https://github.com/q-life/misc/raw/master/trello-background/2.jpg')"],
+              ["hobby","background-image","url('https://github.com/q-life/misc/raw/master/trello-background/1.jpg')"]];
 var currBoard = "U-N-K-N-O-W-N";
 
 function changeBg(){
