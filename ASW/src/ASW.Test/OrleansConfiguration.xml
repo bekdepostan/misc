@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<OrleansConfiguration xmlns="urn:orleans">
+  <Globals>
+    <SeedNode Address="localhost" Port="51100" />
+    <!-- Liveness LivenessType ="MembershipTableGrain" /-->
+  </Globals>
+  <Defaults>
+    <Networking Address="localhost" Port="51100" />
+    <ProxyingGateway Address="localhost" Port="51200" />
+  </Defaults>
+</OrleansConfiguration>

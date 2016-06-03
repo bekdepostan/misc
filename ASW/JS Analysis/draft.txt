@@ -1,0 +1,29 @@
+ ori: 08fab73d718318014f6cd2ed3567035fa901732eb3a311efecf6f9da388bffcdb2dbc5d041c0436231d9f4db391c36bc24ff06fbbe55809e73481f414da73eb1d6dea6892e9ba4d6463af18e78560e33443923a95b31bbd160071f7eb1435a2f06584cbfc9deed46032a02f58369cf4e49d34ae599f83dd3213807a46f1008bcf548d06553c1ec76c927f503d8e0f34740138efe7e705a8b832a0e62eb5b369983028de117debe3a52caf4bb1fb654f68b8251ead81c3515036afb152e3be8ea2cd65851f05e7f5d8df2efc29e602015815e1e1e20cc0f59ad9257b421eb4523452dd03027958133040fe803083344a83349671e2d9fb848f918350ae4a1dfcf96fb71efc9856b12bf7d85028610a1d461467c8f92bbc4866be11832369817dc
+ step1: 0fb3781046de3605a072ba1eeffd38fcbdcd4c463dfd313b2f0fb58974144a3bdda829ad43f87503432a53bd6017b452054bcde4020f86c44d4e9f3d230a610bf4d65ce7c2f0def4418f77588206e539808e1db35cfb1b5f885ed13106f123ee2d55f5758fec962185112c05a95b2e4242d3298300e0034a346129b4f130eadc9f7ec861b78081ad64789bc86e13391d
+ 
+ 
+ Z_: function(S, J, l, O, z) {
+                                    S = securemsg.sJ(S);
+                                    J = securemsg.oj().lI(S, J, l, O, z);
+                                    typeof J == 'object' && (J['offset'] &&
+                                        (J['offset'] = J['offset'] * 2), J.j_ && (J.j_ *= 2));
+                                    return J
+                                },
+								
+								
+1)
+sJ: function(S) {
+    return securemsg['map'](
+		securemsg._j(0, S['length'], 2), 
+		function(J) {
+			return String.fromCharCode(
+				Number("0x" + S.substr(J, 2)))
+		}).join("")
+},
+	
+
+_j: function(S, J, l) {
+    if (l <= 0) throw "";
+    for (var O = []; S < J; S += l) O['push'](S);
+    return O
+},

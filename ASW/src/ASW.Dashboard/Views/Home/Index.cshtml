@@ -1,0 +1,52 @@
+﻿@using ASW.Framework.Simple;
+@using ASW.Framework.Core;
+@{
+    Layout = null;
+    IList<ApplicationCase> _cases = (IList<ApplicationCase>)ViewBag.AppCases;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <table style="width:100%;border:solid 1px #000">
+            <thead>
+                <tr style="background-color:#aaa">
+                    <td>Ref No.</td>
+                    <td>Username</td>
+                    <td>State</td>
+                    <td>Pay State</td>
+                    <td>Card</td>
+                    <td>Updated</td>
+                    <td>Enabled</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var appCase in _cases)
+                {
+                    <tr>
+                        <td>@appCase.AppId</td>
+                        <td>@appCase.Username</td>
+                        <td>@appCase.State</td>
+                        <td>@appCase.PayState</td>
+                        <td>@appCase.CardId</td>
+                        <td>@appCase.UpdatedTime.ToString("dd MMM, HH:mm:ss")</td>
+                        <td>@(appCase.Enabled?"Y":"N")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <script language="javascript">
+        setTimeout(function () {
+            document.location.reload();
+        }, 5000);
+         
+    </script>
+</body>
+</html>
