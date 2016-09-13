@@ -17,6 +17,7 @@ namespace ASW.Framework.Simple
     {
         public static WebRequestJob CreateGetStatusJob(ApplicationCase appCase, WebRequestJob currentJob)
         {
+            
             var job = new WebRequestJob(WhvJobNames.GetStatus, appCase.AppId)
             {
                 Method = RestSharp.Method.GET,

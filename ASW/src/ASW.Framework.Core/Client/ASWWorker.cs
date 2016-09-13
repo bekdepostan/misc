@@ -28,7 +28,7 @@ namespace ASW.Framework.Core
             _restClient = new RestClient();
             _restClient.CookieContainer = new CookieContainer();
             _restClient.UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36";
-            _restClient.Timeout = 15000;
+            _restClient.Timeout = 600000;
         }
 
         public int Index { get; set; }
@@ -55,6 +55,7 @@ namespace ASW.Framework.Core
             while (true)
             {
                 _currentJob = await _aswClient.GetJob(_caseId, _preJob);
+                Logger.Info(string.Format("got job {0}[{1}]:{2}", _currentJob?.Code, Index, _currentJob?.Name));
                 if (_currentJob == null)
                 {
                     _aswClient.Report(_caseId);
@@ -73,7 +74,7 @@ namespace ASW.Framework.Core
                     if (_currentJob.JobResult != JobResults.RepeatNeeded)
                     {
                         //out of loop
-                        Console.WriteLine(string.Format("{0:HH:mm:ss}-{1}[{2}]:{3}|{4}", 
+                        Console.WriteLine(string.Format("{0:HH:mm:ss}-{1}[{2}]:{3}|{4}",
                                                 DateTime.Now, _currentJob.Code, Index,
                                                 _currentJob.Name, _currentJob.JobResult));
                         break;
@@ -115,10 +116,11 @@ namespace ASW.Framework.Core
                     response.StatusDescription));
                 if (response.ResponseStatus == ResponseStatus.TimedOut)
                 {
+                    Console.WriteLine("Response Time Out, retry");
                     Logger.Info("Response Time Out");
                     return JobResults.RepeatNeeded;
                 }
-                else if(response.ResponseStatus == ResponseStatus.Error)
+                else if (response.ResponseStatus == ResponseStatus.Error)
                 {
                     Console.WriteLine("Response Error, retry after 5 secs");
                     Logger.Info("Response Error, retry after 5 secs");

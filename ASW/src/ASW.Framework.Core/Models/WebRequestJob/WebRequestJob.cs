@@ -31,8 +31,6 @@ namespace ASW.Framework.Core
         public string Resource { get; set; }
         public RestSharp.Method Method { get; set; } = RestSharp.Method.POST;
 
-
-
         public JobResults Do(string content)
         {
             ResponseContent = content;

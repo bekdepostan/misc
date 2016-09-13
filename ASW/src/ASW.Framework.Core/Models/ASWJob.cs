@@ -10,7 +10,7 @@ namespace ASW.Framework.Core
 {
     public enum JobTypes { Normal, Finish }
     public enum JobTerminationTypes { RepeatTillSucceedOrExcepted, RepeatTillExcess }
-    public enum JobResults { None, Succeed, Failed, RepeatNeeded, Excepted }
+    public enum JobResults { None, Succeed, Failed, RepeatNeeded, Excepted, TimeOut }
     [Serializable]
     public abstract class ASWJob
     {
